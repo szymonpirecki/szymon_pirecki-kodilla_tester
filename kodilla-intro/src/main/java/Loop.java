@@ -14,11 +14,12 @@ public class Loop {
             System.out.println(namesForPuppy[i]);
         }
 
-        int[] numbers = new int[] {1, 2, 3, 4, 5};
+        int[] numbers = new int[] {1, 2, 3, 4, 55,};
+        int result = sumNumbers(numbers);
+        System.out.println(result);
+     }
 
-    }
-
-    public int sumNumbers(int[] numbers) {
+    public static int sumNumbers(int[] numbers) {
         int result = 0;
         for (int i = 0; i < numbers.length; i++) {
                 result = result + numbers[i];
