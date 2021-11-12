@@ -25,6 +25,6 @@ public class Grades {
         int result = 0;
         for (int i = 0; i < grades.length; i++) {
             result = result + grades[i];}
-        return result/(grades.length - 1);
+        return result/grades.length;
     }
 }
