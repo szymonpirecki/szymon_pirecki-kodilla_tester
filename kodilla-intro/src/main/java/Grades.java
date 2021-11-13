@@ -7,7 +7,7 @@ public class Grades {
                 this.size = 0;
             }
 
-        public void add(int value){
+            public void add(int value){
         if(this.size == 10){
         return;
         }
@@ -15,13 +15,13 @@ public class Grades {
         this.size++;
         }
 
-    public int lastGrade(int[] grades){
+    public int lastGrade(){
                 int lastPlace = grades.length - 1;
                 int theLastGrade = grades[lastPlace];
                 return theLastGrade;
 
     }
-    public int avarage(int[] grades){
+    public int avarage(){
         int result = 0;
         for (int i = 0; i < grades.length; i++) {
             result = result + grades[i];}
