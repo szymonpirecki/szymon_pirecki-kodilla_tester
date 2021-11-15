@@ -10,23 +10,29 @@ public class User {
         this.users = new User[8];
     }
 
-    public void average() {
+    public int average() {
 
         int result = 0;
         for (int i = 0; i < users.length; i++){
             result = result + users[i].age;
         }
         int theAverage = result / users.length;
+        return theAverage;
     }
 
-    public void showWhoIsBelowAverageAge() {
-
-        for (int i = 0; i < users.length; i++){
-            if(this.age < int theAverage){         //dlaczego tutaj warunek if nie chce mi przejsc?
-                System.out.println(this.name);
+    public String showWhoIsBelowAverageAge() {
+        int theAverage = this.average();                   //zadeklarowanie zmiennej theAverage w tym bloku//o to chodzilo?
+        for (int i = 0; i < users.length; i++) {
+            if (users[i].age < theAverage) {
+                return users[i].name;
+                System.out.println(users[i].name);
+            } else {
+                return String.valueOf(0);           //tutaj sugestia inelliJ jak wyrazic 0 w stringu
             }
         }
-    }
+    }                                           //wyswietla mi sie blad "missing return statement" mimo ze dalem return dla if i dla else
+
+
 
 
 
@@ -45,7 +51,7 @@ public class User {
 
 
 
-
+        users.average()          //nie moge wywolac zadnej metody, ani average ani showWhoIsBelow
         }
 
 
