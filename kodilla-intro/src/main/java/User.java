@@ -20,20 +20,14 @@ public class User {
         return theAverage;
     }
 
-    public String showWhoIsBelowAverageAge() {
-        int theAverage = this.average();                   //zadeklarowanie zmiennej theAverage w tym bloku//o to chodzilo?
+     public void showWhoIsBelowAverageAge() {
+        int theAverage = this.average();
         for (int i = 0; i < users.length; i++) {
             if (users[i].age < theAverage) {
-                return users[i].name;
                 System.out.println(users[i].name);
-            } else {
-                return String.valueOf(0);           //tutaj sugestia inelliJ jak wyrazic 0 w stringu
             }
         }
-    }                                           //wyswietla mi sie blad "missing return statement" mimo ze dalem return dla if i dla else
-
-
-
+    }
 
 
         public static void main(String[] args){
@@ -49,11 +43,8 @@ public class User {
 
         User users[] = {Kamil, Zbyszek, Adam, Tomasz, Olaf, Gracjan, Krzysztof, Przemek};
 
-
-
-        users.average()          //nie moge wywolac zadnej metody, ani average ani showWhoIsBelow
-        }
-
-
-
+        // utworzona tablica nie jest juz obiektem? jak wywolac motede dla calej tablicy?
+            User tablica = new User(users[]);
+            tablica.showWhoIsBelowAverageAge();
+}
 }
