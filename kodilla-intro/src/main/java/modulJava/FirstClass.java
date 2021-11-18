@@ -1,3 +1,7 @@
+package modulJava;
+
+import modulJava.Notebook;
+
 public class FirstClass {
     public static void main(String[] args) {
 

@@ -1,3 +1,5 @@
+package modulJava;
+
 public class Application {
     String name;
     double age;
@@ -12,9 +14,9 @@ public class Application {
         public void check() {
             if (this.name != null) {
                 if (this.age > 30 && this.height > 160) {
-                    System.out.println("User is older than 30 and higher than 160cm");
+                    System.out.println("zadaniePetle.User is older than 30 and higher than 160cm");
                 } else {
-                    System.out.println("User is 30 (or younger) or 160cm (or shorter)");
+                    System.out.println("zadaniePetle.User is 30 (or younger) or 160cm (or shorter)");
                 }
             }
         }

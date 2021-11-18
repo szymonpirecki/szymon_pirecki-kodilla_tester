@@ -1,10 +1,11 @@
-public class Grades {           //utworzenie klasy Grades
-    private int[] grades;       //dodanie atrybutu klasy - tablicy grades
-    private int size;           //dodanie do klasy atrybutu "size" - nowa zmienna do monitorowania ile jest elementow w tablicy.
+package modulJava;
 
-    public Grades() {           //utworzenie konstruktora grades
-        this.grades = new int[10];  //ustanowienie ze tablica grades ma 10 elementów?
-        this.size = 0;          // zadeklarowanie ze zmienna size = 0
+public class Grades {           //utworzenie klasy modulJava.Grades
+    private int[] grades = new int[10];       //dodanie atrybutu klasy - tablicy grades
+    private int size = 0;           //dodanie do klasy atrybutu "size" - nowa zmienna do monitorowania ile jest elementow w tablicy.
+
+    public Grades() {           //kontruktor tworzymy po to zeby umozliwic tworzenie obiektu w zadany sposob
+                        //bedziemy tworzyc obiekt typu modulJava.Grades ale bez argumentow
     }
 
     public void add(int value) {  //utworzenie metody add zeby dodawac oceny do tablicy. (int value) - metoda przyjmuje parametr value
@@ -24,6 +25,7 @@ public class Grades {           //utworzenie klasy Grades
             return grades[lastPlace];                         //zwrocenie ostatniej oceny - nie wiem czemu pojawia sie problem "missing return statement"
         }
     }
+    //typ zmiennej nazwa obiektu =  new nazwa klasy
 
 
     public int avarage() { //utworzenie metody avarage
@@ -35,13 +37,22 @@ public class Grades {           //utworzenie klasy Grades
             for (int i = 0; i < grades.length; i++) {
                 result = result + grades[i];    //utworzenie petli for zeby sumowac elementy tablicy
             }
-            return result / grades.length;  //zwrot średniej
+            int srednia = result / grades.length;
+            return srednia;  //zwrot średniej
         }
     }
+
+
+
+    public static void main(String[] args){
+        Grades jan = new Grades();
+
+        jan.add(5);
+        jan.add(4);
+        jan.add(3);
+
+
+        int result = jan.avarage();
+        System.out.println(result);
+    }
 }
-//cześć Paweł, mam prosbe.
-//w komentarzach opisalem jak interpretuje ten caly kod
-//moglbys rzucic okiem i wytknac mi gdzie sie myle?
-//jeszcze nie czuje sie swobodnie w tym wszytkim i od tego kombinowania mam juz w glowie metlik
-// i  nie wiem juz co jest faktem a co moim wymysłem
-//pozdrawiam

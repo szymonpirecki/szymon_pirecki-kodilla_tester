@@ -1,3 +1,5 @@
+package poczatki;
+
 public class Main {
     public static void main(String[] args) {
         String myName = "Szymon";

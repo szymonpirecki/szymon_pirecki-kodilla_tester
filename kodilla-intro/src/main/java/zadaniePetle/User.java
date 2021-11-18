@@ -1,3 +1,5 @@
+package zadaniePetle;
+
 public class User {
     String name;
     int age;
@@ -44,7 +46,8 @@ public class User {
         User users[] = {Kamil, Zbyszek, Adam, Tomasz, Olaf, Gracjan, Krzysztof, Przemek};
 
         // utworzona tablica nie jest juz obiektem? jak wywolac motede dla calej tablicy?
-            User tablica = new User(users[]);
-            tablica.showWhoIsBelowAverageAge();
+
+
+
 }
 }

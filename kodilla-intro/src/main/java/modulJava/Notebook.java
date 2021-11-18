@@ -1,3 +1,5 @@
+package modulJava;
+
 public class Notebook {
     int weight;
     int price;

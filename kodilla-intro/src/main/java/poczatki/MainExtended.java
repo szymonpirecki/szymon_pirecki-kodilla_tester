@@ -1,3 +1,5 @@
+package poczatki;
+
 public class MainExtended {
     public static void main(String[] args){
         String bestMovie = "Cath me if you can";

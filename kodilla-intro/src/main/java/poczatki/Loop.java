@@ -1,3 +1,5 @@
+package poczatki;
+
 public class Loop {
     public static void main(String[] args) {
         String[] namesForPuppy = new String[5];
