@@ -11,30 +11,33 @@ public class Person {
         this.job = job;
     }
 
+    public void showDuties(){
+        System.out.println("His responsibilities is to " + job.getResponsibilities());
+    }
+
 
 
     public static void main(String[] args) {
-        JobMethods duties = new JobMethods();
-
         Job actor = new Actor();
-        duties.showingResponsibilities(actor);
-        // System.out.println(actor.getResponsibilities());
+        Person tomaszKarolak = new Person("Tomasz", 50, actor); //dlaczego nie podswietla mi sie tutaj argument z konstruktora, job: actor?
+        tomaszKarolak.showDuties();
 
         Job barber = new Barber();
-        duties.showingResponsibilities(barber);
-       // System.out.println(barber.getResponsibilities());
+        Person janStrzyg = new Person("Jan", 30, barber);
+        janStrzyg.showDuties();
 
         Job clown = new Clown();
-        duties.showingResponsibilities(clown);
-        //System.out.println(clown.getResponsibilities());
+        Person olafPajacyk = new Person("Olaf", 21, clown);
+        olafPajacyk.showDuties();
 
         Job driver = new Driver();
-        duties.showingResponsibilities(driver);
-      //  System.out.println(driver.getResponsibilities());
+        Person igorKiero = new Person("Igor", 59, driver);
+        igorKiero.showDuties();
 
         Job electrician = new Electrician();
-        duties.showingResponsibilities(electrician);
-    //    System.out.println(electrician.getResponsibilities());
+        Person kamilWolt = new Person("Kamil", 27, electrician);
+        kamilWolt.showDuties();
+
     }
 
 }
