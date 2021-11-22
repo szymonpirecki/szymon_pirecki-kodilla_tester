@@ -7,7 +7,6 @@ public class Windows extends OperatingSystem{
     }
 
 
-
     @Override
     public void turnOn(){
         System.out.println("Windows is on.");

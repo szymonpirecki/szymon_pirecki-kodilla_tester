@@ -7,7 +7,7 @@ public class MacOs extends OperatingSystem{
 
     @Override
     public void turnOn(){
-        System.out.println("MacOc is on.");
+        System.out.println("MacOs is on.");
     }
 
     @Override
