@@ -11,21 +11,30 @@ public class Person {
         this.job = job;
     }
 
+
+
     public static void main(String[] args) {
+        JobMethods duties = new JobMethods();
+
         Job actor = new Actor();
-        System.out.println(actor.getResponsibilities());
+        duties.showingResponsibilities(actor);
+        // System.out.println(actor.getResponsibilities());
 
         Job barber = new Barber();
-        System.out.println(barber.getResponsibilities());
+        duties.showingResponsibilities(barber);
+       // System.out.println(barber.getResponsibilities());
 
         Job clown = new Clown();
-        System.out.println(clown.getResponsibilities());
+        duties.showingResponsibilities(clown);
+        //System.out.println(clown.getResponsibilities());
 
         Job driver = new Driver();
-        System.out.println(driver.getResponsibilities());
+        duties.showingResponsibilities(driver);
+      //  System.out.println(driver.getResponsibilities());
 
         Job electrician = new Electrician();
-        System.out.println(electrician.getResponsibilities());
+        duties.showingResponsibilities(electrician);
+    //    System.out.println(electrician.getResponsibilities());
     }
 
 }
