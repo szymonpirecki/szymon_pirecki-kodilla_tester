@@ -1,16 +1,32 @@
 package modulJava;
 
 public class Notebook {
-    int weight;
-    int price;
-    String brand;
-    int year;
+    private int weight;
+    private int price;
+    private String brand;
+    private int year;
 
     public Notebook(int weight, int price, String brand, int year) {
         this.weight = weight;
         this.price = price;
         this.brand = brand;
         this.year = year;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getPrice(){
+        return price;
+    }
+
+    public String getBrand(){
+        return brand;
+    }
+
+    public int getYear(){
+        return year;
     }
 
     public void checkPrice() {

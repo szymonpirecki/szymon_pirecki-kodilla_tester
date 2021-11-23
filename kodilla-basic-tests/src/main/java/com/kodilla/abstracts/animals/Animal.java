@@ -14,10 +14,10 @@ public abstract class Animal {
 
     public abstract void giveVoice();
 
-    public void sit()
-    {
-        System.out.println("sit");
-    }
+    //public void sit()
+   // {
+     //   System.out.println("sit");
+    //}
 
     public abstract void hasATail();
 }

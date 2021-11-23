@@ -1,11 +1,12 @@
-package com.kodilla.abstracts.homework;
+package com.kodilla.abstracts.homework.shapes;
 
 public class Application {
     public static void main(String[] args) {
-        Shape square = new Square(10);
+        Square square = new Square(10);
         Shape rectangle = new Rectangle(10, 5);
-        Shape circle = new Circle(10);
+        Circle circle = new Circle(10);
 
+        square.coTo();
         square.area();
         square.circumference();
         rectangle.area();

@@ -16,8 +16,9 @@ public class OperatingSystem {
         System.out.println("Off");
     }
     public void update(){
-        System.out.println("Updating");
+        System.out.println("Updated");
     }
+
     public String getDefinition(){
         return definition;
     }

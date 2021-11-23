@@ -1,4 +1,6 @@
-package com.kodilla.abstracts.homework;
+package com.kodilla.abstracts.homework.shapes;
+
+import com.kodilla.abstracts.homework.shapes.Shape;
 
 public class Square extends Shape {
     private int a;
@@ -20,4 +22,8 @@ public class Square extends Shape {
 
     }
 
+    public void coTo() {
+        System.out.println("to jest kwadrat");
+
+    }
 }

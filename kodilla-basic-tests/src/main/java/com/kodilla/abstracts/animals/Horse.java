@@ -2,7 +2,7 @@ package com.kodilla.abstracts.animals;
 
 public class Horse extends Animal{
 String color;
-    public Horse(String color){
+        public Horse(String color){
         super(4);
         this.color = color;
     }
@@ -14,7 +14,7 @@ String color;
 
     @Override
     public void giveVoice() {
-        System.out.println("Ihaaa");
+        System.out.println(" Ihaaa");
     }
 
     @Override

@@ -1,14 +1,17 @@
 package com.kodilla.abstracts.animals;
 
 public class Fish extends Animal{
+    String color;
 
-    public Fish(){
+    public Fish(String color){
         super(0);
+        this.color = color;
+
     }
 
     @Override
     public void giveVoice() {
-        System.out.println("bulbul");
+        System.out.println(" bulbul");
     }
 
     @Override
