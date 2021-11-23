@@ -3,13 +3,13 @@ package com.kodilla.basic_assertion;
 public class Application {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        int a = 5;
-        int b = 8;
-        int sumResult = calculator.sum(a, b);
+        double a = 5;
+        double b = 8;
+        double sumResult = calculator.sum(a, b);
         boolean correctSum = ResultChecker.assertEquals(13, sumResult);
-        int subtractResult = calculator.subtract(a, b);
+        double subtractResult = calculator.subtract(a, b);
         boolean correctSubtract = ResultChecker.assertEquals(-3, subtractResult);
-        int squareResult = calculator.square(a);
+        double squareResult = calculator.square(a);
         boolean correctSquare = ResultChecker.assertEquals(25, squareResult);
 
         if(correctSum){

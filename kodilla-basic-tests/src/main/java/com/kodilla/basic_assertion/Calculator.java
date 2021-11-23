@@ -4,13 +4,13 @@ public class Calculator {
  //   private int a;      //  czy wypisywanie atrybutow klasy jest potrzebne tylko gdy tworzymy konstruktor?
  //   private int b;
 
-   public int sum(int a, int b){
+   public double sum(double a, double b){
        return a + b;
    }
-   public int subtract(int a, int b){
+   public double subtract(double a, double b){
        return a - b;
    }
-   public int square(int a){
+   public double square(double a){
        return a * a;
    }
 }

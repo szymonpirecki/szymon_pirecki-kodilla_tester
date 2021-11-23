@@ -29,8 +29,6 @@ public class Application {
         Animal horse = new Horse("black");
         processor.process(horse);
 
-        Cat cat = new Cat("White");
-        processor.process(cat);
 
 
 }
