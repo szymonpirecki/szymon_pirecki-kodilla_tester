@@ -6,11 +6,11 @@ public class Application {
         int a = 5;
         int b = 8;
         int sumResult = calculator.sum(a, b);
-        boolean correctSum = ResultChecker.assertEquasl(13, sumResult);
+        boolean correctSum = ResultChecker.assertEquals(13, sumResult);
         int subtractResult = calculator.subtract(a, b);
-        boolean correctSubtract = ResultChecker.assertEquasl(-3, subtractResult);
+        boolean correctSubtract = ResultChecker.assertEquals(-3, subtractResult);
         int squareResult = calculator.square(a);
-        boolean correctSquare = ResultChecker.assertEquasl(25, squareResult);
+        boolean correctSquare = ResultChecker.assertEquals(25, squareResult);
 
         if(correctSum){
             System.out.println("Metoda sum działa poprawnie dla liczb: " + a + " i " + b);
