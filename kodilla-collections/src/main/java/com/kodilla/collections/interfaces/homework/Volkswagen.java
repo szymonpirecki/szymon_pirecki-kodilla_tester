@@ -1,4 +1,4 @@
-package interfaces.homework;
+package com.kodilla.collections.interfaces.homework;
 
 public class Volkswagen implements Car {
     private int Speed;
@@ -14,14 +14,14 @@ public class Volkswagen implements Car {
     }
 
     @Override
-    public void increaseSpeed() {
+    public int increaseSpeed() {
         Speed = Speed + 30;
-
+        return Speed;
     }
 
     @Override
-    public void decreaseSpeed() {
+    public int decreaseSpeed() {
         Speed = Speed - 15;
-
+        return Speed;
     }
 }
