@@ -26,7 +26,7 @@ public class CarListApplication {
 
         cars.remove(0);
         cars.remove(corsa);
-       // cars.remove(new Opel (90));  // ten sposob nie dzialal nie wiem dlaczego
+        cars.remove(new Opel (90));  // ten sposob nie dzialal nie wiem dlaczego
         System.out.println("W tej kolekcji jest: " + cars.size() + " aut.");
 
         for(Car car : cars){

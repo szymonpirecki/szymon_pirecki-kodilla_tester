@@ -9,7 +9,7 @@ public class CarUtils {
     public static void describeCar(Car car){
         System.out.println("______________________________");
         System.out.println("Car brand: " + getCarBrand(car));
-        System.out.println("Speeding: " + car.increaseSpeed()); //zeby moc to zrobic zmienilem metody increase i decrease z void na zwracajace int
+        System.out.println("Speed: " + car.getSpeed()); //zeby moc to zrobic zmienilem metody increase i decrease z void na zwracajace int
                                                                 //mozna to bylo zrobic inaczej?
 
     }

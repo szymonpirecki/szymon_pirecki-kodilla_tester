@@ -1,4 +1,4 @@
-package com.kodilla.sets.homework;
+package com.kodilla.collections.sets.homework;
 
 import java.util.Objects;
 

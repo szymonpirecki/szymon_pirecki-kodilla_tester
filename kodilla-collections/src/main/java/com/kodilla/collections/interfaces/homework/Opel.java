@@ -1,27 +1,45 @@
 package com.kodilla.collections.interfaces.homework;
 
+import java.util.Objects;
+
 public class Opel implements Car{
-    private int Speed;
+    private int speed;
 
     public Opel(int Speed){
-        this.Speed = Speed;
+        this.speed = Speed;
     }
     @Override
     public int getSpeed() {
-        return Speed;
+        return speed;
     }
 
     @Override
     public int increaseSpeed() {
-        Speed = Speed + 25;
-        return Speed;
+        speed = speed + 25;
+        return speed;
     }
 
     @Override
     public int decreaseSpeed() {
-        Speed = Speed - 10;
-        return Speed;
+        speed = speed - 10;
+        return speed;
     }
 
+    @Override
+    public String toString() {
+        return "Opel";
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Opel opel = (Opel) o;
+        return speed == opel.speed;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(speed);
+    }
 }
