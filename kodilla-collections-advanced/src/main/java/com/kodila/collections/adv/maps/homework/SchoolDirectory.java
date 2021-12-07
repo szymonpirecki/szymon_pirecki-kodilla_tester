@@ -7,24 +7,8 @@ import java.util.Map;
 public class SchoolDirectory {
     public static void main(String[] args) {
 
-        School school1 = new School();
-
-        school1.getClassesInSchool1().add(school1.szkola1klasa1a);
-        school1.getClassesInSchool1().add(school1.szkola1klasa1b);
-        school1.getClassesInSchool1().add(school1.szkola1klasa2a);
-        school1.getClassesInSchool1().add(school1.szkola1klasa2b);
-
-        System.out.println(school1.getSumOfStudentsInSchool1());
-
-
-        School school2 = new School();
-
-        school2.getClassesInSchool2().add(school2.szkola2klasa1a);
-        school2.getClassesInSchool2().add(school2.szkola2klasa1b);
-        school2.getClassesInSchool2().add(school2.szkola2klasa2a);
-        school2.getClassesInSchool2().add(school2.szkola2klasa2b);
-
-        System.out.println(school2.getSumOfStudentsInSchool2());
+       School school1 = new School(11, 22, 33);
+       School school2 = new School(22, 11, 11);
 
 
     Principal leonSzpak = new Principal("Leon", "Szpak", 1);
@@ -37,22 +21,10 @@ public class SchoolDirectory {
 
     for(Map.Entry<Principal, School> principalSchoolEntry : schoolDirectory.entrySet()){
         System.out.println("--------------------");
+        System.out.println("Dryrektor szkoły numer: " + principalSchoolEntry.getKey().getSchoolNumber() + ".");
         System.out.println(principalSchoolEntry.getKey().getFirstname() + " " + principalSchoolEntry.getKey().getLastname());
-        System.out.println("Dryrektor szkoły numer: " + principalSchoolEntry.getKey().getSchoolNumber());
-      //  System.out.println("Szkoła numer: " + principalSchoolEntry.getKey().getSchoolNumber() + " liczy: " + principalSchoolEntry.getValue().); i tutaj bym chcial uzyc metody getSumOf ale musza ja uogolnic zeby moc uzyc jej w petli, jak to zrobic?
+        System.out.println("Szkoła numer " + principalSchoolEntry.getKey().getSchoolNumber() + ". liczy " + principalSchoolEntry.getValue().getSumOfStudents() + " uczniów.");
     }
 }
 }
 
-
-
-//
-////        for(Map.Entry<Principal, List<School>> principals : schoolDirectory.entrySet()){
-////
-////            System.out.println(principals.getKey().getFirstname() + " " + principals.getKey().getLastname() + " jest dyrektorem szkoły");
-////        }
-////
-////
-//
-//    }
-//}
