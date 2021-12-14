@@ -13,9 +13,6 @@ public class Book {
         this.author = author;
     }
 
-    static List<Book> books = new ArrayList<>();
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -37,5 +34,11 @@ public class Book {
         return author;
     }
 
-
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                '}';
+    }
 }
