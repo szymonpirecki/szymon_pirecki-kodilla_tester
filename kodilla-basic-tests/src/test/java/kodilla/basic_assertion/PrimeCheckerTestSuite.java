@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class PrimeCheckerTestSuite {
+public class PrimeCheckerTestSuite{
 
     private PrimeChecker checker = new PrimeChecker();
     private static int count = 0;
