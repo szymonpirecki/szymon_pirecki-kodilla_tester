@@ -8,6 +8,12 @@ public class ColoursRepository {
     static String[] coloursStartingWithO = {"orange", "ocean blue"};
     static String[] coloursStartingWithP = {"pink", "purple"};
     static String[] coloursStartingWithY = {"yellow"};
+    static String[] coloursStartingWithA = {"aqua", "apple green"};
+
+
+    public static String[] getColoursStartingWithA() {
+        return coloursStartingWithA;
+    }
 
     public static String[] getColoursStartingWithG() {
         return coloursStartingWithG;
