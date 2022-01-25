@@ -34,16 +34,17 @@ public class ColourGuessing {
         return colours;
     }
 
-    private Object colorSearching() throws UnknownColourException {
+    private String colorSearching() throws UnknownColourException {
         ColourGuessing guessing = new ColourGuessing();
         String[] arrayToCheck = guessing.getArrayWithColours();
-        String usersColour;
+        String usersColour = "kolor";
+
         if (arrayToCheck.length == 1) {
             usersColour = arrayToCheck[0];
+
         } else {
-            String secondLetterFromUser = UserDialogs.getSecondLetter();
             List<String> coloursWithSameFirst2Letters = new ArrayList<>();
-            List<String> coloursWithSameFirst3Letters = new ArrayList<>();
+            String secondLetterFromUser = UserDialogs.getSecondLetter();
 
             for (String colour : arrayToCheck) {
                 char secondLetter = colour.charAt(1);
@@ -60,18 +61,27 @@ public class ColourGuessing {
                     String thirdLetterFromUser = UserDialogs.getThirdLetter();
                     char thirdLetter = colour.charAt(2);
                     String thirdLetterAsString = Character.toString(thirdLetter);
+
+                    List<String> coloursWithSameFirst3Letters = new ArrayList<>();
+
                     if (thirdLetterAsString == thirdLetterFromUser) {
                         coloursWithSameFirst3Letters.add(colour);
                     }
+
                     if (coloursWithSameFirst3Letters.size() == 1) {
                         usersColour = coloursWithSameFirst3Letters.get(0);
-                    }
 
+                    }else{
+                        usersColour = "i dont know, try with another colour";
+                    }
                 }
             }
         }
         return usersColour;
     }
 
-
+    public String colourGuessing() throws UnknownColourException {
+        ColourGuessing guessing = new ColourGuessing();
+        return guessing.colorSearching();
+    }
 }
