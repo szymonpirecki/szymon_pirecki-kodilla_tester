@@ -16,6 +16,7 @@ public class GoogleSearch extends AbstractPage {
 
     @FindBy(css = "input[value='Szukaj w Google']")
     static List<WebElement> searchButton;
+
     private static GoogleResults googleResults;
 
     public GoogleSearch(WebDriver driver) {
