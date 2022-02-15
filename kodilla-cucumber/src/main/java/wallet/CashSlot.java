@@ -2,7 +2,7 @@ package wallet;
 
 public class CashSlot {
 
-    private int contest;
+    private Integer contest;
 
     public Integer getContest(){
         return contest;

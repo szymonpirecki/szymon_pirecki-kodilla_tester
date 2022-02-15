@@ -11,7 +11,11 @@ private int balance = 0;
         this.balance =+ money;
     }
 
-    public int getBalance(){
+    public Integer getBalance(){
         return balance;
+    }
+
+    public void debit(int money){
+        this.balance -= money;
     }
 }
