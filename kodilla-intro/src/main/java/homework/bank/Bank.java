@@ -2,11 +2,9 @@ package homework.bank;
 
 public class Bank {
 
-
-    private CashMachine machine;
-
-    CashMachine[] machines = new CashMachine[]
+   private CashMachine[] machines = new CashMachine[]
             {new CashMachine()};
+
 
 
     public int getBalance(){
@@ -20,12 +18,7 @@ public class Bank {
     public int howManyDeposits(){
         int count = 0;
         for (CashMachine cashMachine : machines){
-           int[] transactions = cashMachine.getTransactions();
-            for(int i = 0; i < transactions.length; i++){
-                if (transactions[i] > 0){
-                    count++;
-                }
-            }
+            count += cashMachine.howManyDeposits();
         }
         return count;
     }
@@ -33,12 +26,7 @@ public class Bank {
     public int howManyWithdrawal(){
         int count = 0;
         for (CashMachine cashMachine : machines){
-            int[] transactions = cashMachine.getTransactions();
-            for(int i = 0; i < transactions.length; i++){
-                if (transactions[i] < 0){
-                    count++;
-                }
-            }
+            count += cashMachine.howManyWithdrawals();
         }
         return count;
     }
@@ -47,14 +35,8 @@ public class Bank {
         int count = 0;
         int sum = 0;
         for (CashMachine cashMachine : machines){
-            int[] transactions = cashMachine.getTransactions();
-            for(int i = 0; i < transactions.length; i++){
-                if (transactions[i] < 0){
-                    count++;
-                    sum += transactions[i];
-                }
-
-            }
+         count += cashMachine.howManyWithdrawals();
+         sum -= cashMachine.getSumOfWithdrawals();
         }
         return sum/count;
     }
@@ -63,15 +45,9 @@ public class Bank {
         int count = 0;
         int sum = 0;
         for (CashMachine cashMachine : machines){
-            int[] transactions = cashMachine.getTransactions();
-            for(int i = 0; i < transactions.length; i++){
-                if (transactions[i] > 0){
-                    count++;
-                    sum += transactions[i];
-                }
-            }
+            count += cashMachine.howManyDeposits();
+            sum += cashMachine.getSumOfDeposits();
         }
         return sum/count;
     }
-
 }
