@@ -4,15 +4,26 @@ import java.util.Arrays;
 
 public class CashMachine {
 
+    private double[] transactions = new double[0];
+    private int size;
+
     public CashMachine() {
     }
 
-    private int[] transactions = new int[]
-            {10, 10, -90, 50, -10};
+    public void addTransactions(double transaction){
+        this.size++;
+        double[] newTab = new double[this.size];
+        System.arraycopy(transactions, 0, newTab, 0, transactions.length);
+        newTab[this.size - 1] = transaction;
+        this.transactions = newTab;
+    }
+
+//    private int[] transactions = new int[]
+//            {10, 10, -90, 50, -10};
 
 
-    public int howManyDeposits(){
-        int count = 0;
+    public double howManyDeposits(){
+        double count = 0;
         for(int i = 0; i < transactions.length; i++){
             if (transactions[i] > 0){
                 count++;
@@ -21,8 +32,8 @@ public class CashMachine {
         return count;
     }
 
-    public int howManyWithdrawals(){
-        int count = 0;
+    public double howManyWithdrawals(){
+        double count = 0;
         for (int i = 0; i < transactions.length; i++){
             if (transactions[i] < 0){
                 count ++;
@@ -31,8 +42,8 @@ public class CashMachine {
     return count;
     }
 
-    public int getSumOfDeposits(){
-        int sum = 0;
+    public double getSumOfDeposits(){
+        double sum = 0;
         for (int i = 0; i < transactions.length; i++){
             if (transactions[i] > 0){
                 sum += transactions[i];
@@ -41,8 +52,8 @@ public class CashMachine {
         return sum;
     }
 
-    public int getSumOfWithdrawals(){
-        int sum = 0;
+    public double getSumOfWithdrawals(){
+        double sum = 0;
         for (int i = 0; i < transactions.length; i++){
             if (transactions[i] < 0 ){
                 sum -= transactions[i];
@@ -51,10 +62,10 @@ public class CashMachine {
     return sum;
     }
 
-    public int getSaldo(){
+    public double getSaldo(){
         return Arrays.stream(transactions).sum();
     }
-    public int getNumberOfTransactions(){
+    public double getNumberOfTransactions(){
         return transactions.length;
     }
     }
