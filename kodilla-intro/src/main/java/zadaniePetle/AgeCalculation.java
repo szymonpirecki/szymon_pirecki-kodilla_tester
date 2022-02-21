@@ -13,7 +13,8 @@ public class AgeCalculation {
     public void whoIsBelowAverage(User[] users){
         for(User User : users){
             if(User.getAge() > averageAge(users)){
-                System.out.println(User.getName() + " is older than the average age of this group.");
+                System.out.println(User.getName()
+                        + " is older than the average age of this group.");
             }
         }
     }

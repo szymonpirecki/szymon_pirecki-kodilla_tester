@@ -20,8 +20,7 @@ private List<WebElement> results;
     }
 
     public void iSeeResults() {
-        System.out.println("I see results");
-        System.out.println(results.size());
+        System.out.println("I see " + results.size() + " results");
     }
 
     public PickedResult pickRandomResult(WebDriver driver) throws InterruptedException {

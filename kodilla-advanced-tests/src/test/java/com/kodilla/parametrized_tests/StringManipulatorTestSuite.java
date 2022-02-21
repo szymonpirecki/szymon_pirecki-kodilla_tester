@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class StringManipulatorTestSuite {
 
     private StringManipulator manipulator = new StringManipulator();
+
     @ParameterizedTest
     @CsvFileSource(resources = "/stringWithLowerCase.csv", numLinesToSkip = 1)
     public void shouldReturnReverseStringWithLowerCase(String input, String expected){

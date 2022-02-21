@@ -21,9 +21,21 @@ public class IsItSummerSteps implements En {
             this.answer = seasonChecker.checkIfSummer(this.today);
         });
 
-        Then("I should be told (string)", (String string) -> {
+        Then("I should be told {string}", (String string) -> {
             // Write code here that turns the phrase above into concrete actions
             Assert.assertEquals(string, this.answer);
+        });
+        Given("today is first day of August", () -> {
+            this.today = MonthDay.of(9, 1);
+        });
+        Given("today is 3rd day of march", () -> {
+            // Write code here that turns the phrase above into concrete actions
+            this.today = MonthDay.of(3, 3);
+        });
+
+        Given("today is my birthday", () -> {
+            // Write code here that turns the phrase above into concrete actions
+            this.today = MonthDay.of(3, 8);
         });
     }
 }

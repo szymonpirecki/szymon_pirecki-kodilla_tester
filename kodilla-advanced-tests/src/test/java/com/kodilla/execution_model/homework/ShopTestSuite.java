@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -37,20 +39,19 @@ class ShopTestSuite {
         assertEquals(100, shop.getSumOfOrderValues());
     }
 
-//    @Test
-//    @CsvSource(value = "2021,1,1:2021,1,2", delimiter = ':')
-//    public void shouldReturnListOfOrdersFromAGivenPeriod(LocalDate min, LocalDate max){
-//        List<Order> expected = new ArrayList<>();
-//        expected.add(testOrder1);
-//        expected.add(testOrder2);
-//        assertEquals(expected, shop.getListOfOrdersFromAGivenPeriod(min, max));
-//    }
-//    @Test
-//    public void shouldReturnListOfOrdersFromAGivenValueRange(double minValue, double maxValue){
-//        List<Order> expected = new ArrayList<>();
-//        expected.add(testOrder1);
-//        assertEquals(expected, shop.getListOfOrdersFromAGivenValueRange(5,15));
-//    }
+    @Test
+    public void shouldReturnListOfOrdersFromAGivenPeriod(){
+        List<Order> expected = new ArrayList<>();
+        expected.add(testOrder1);
+        expected.add(testOrder2);
+        assertEquals(expected, shop.getListOfOrdersFromAGivenPeriod(LocalDate.of(2021,1,1), LocalDate.of(2021,1,2)));
+    }
+    @Test
+    public void shouldReturnListOfOrdersFromAGivenValueRange(){
+        List<Order> expected = new ArrayList<>();
+        expected.add(testOrder1);
+        assertEquals(expected, shop.getListOfOrdersFromAGivenValueRange(5,15));
+    }
 
     //jak podawac w testach listy obiektow jako argumenty? jak robie to tym sposobem to mi wyrzuca błędy
 }
