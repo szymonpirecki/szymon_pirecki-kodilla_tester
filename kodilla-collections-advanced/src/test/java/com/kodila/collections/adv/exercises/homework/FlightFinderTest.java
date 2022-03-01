@@ -15,11 +15,8 @@ class FlightFinderTest {
     FlightFinder finder = new FlightFinder();
 
     flightList.add(new Flight("Oslo", "Amsterdam"));
-    System.out.println(flightList.size());
     flightList.add(new Flight("Amsterdam", "Oslo"));
-    System.out.println(flightList.size());
     flightList = finder.findFlightsFrom("Oslo");
-    System.out.println(flightList.size());
     Object[] resultArray = flightList.toArray();
 
     List<Flight> expectedList = new ArrayList<>();
@@ -27,9 +24,27 @@ class FlightFinderTest {
     Object[] expectedArray = expectedList.toArray();
 
     Assertions.assertArrayEquals(expectedArray, resultArray);
+}
 
+@Test
+    void shouldReturnFlightToAmsterdam(){
+    List<Flight> flightList = FlightRepository.getFlightsTable();
+    FlightFinder finder = new FlightFinder();
+
+    flightList.add(new Flight("Oslo", "Amsterdam"));
+    flightList.add(new Flight("Amsterdam", "Oslo"));
+    flightList = finder.findFlightsTo("Amsterdam");
+    Object[] resultArray = flightList.toArray();
+
+    List<Flight> expectedList = new ArrayList<>();
+    expectedList.add(new Flight("Oslo", "Amsterdam"));
+    Object[] expectedArray = expectedList.toArray();
+
+    Assertions.assertArrayEquals(expectedArray, resultArray);
 
 }
+
+
 
 
 

@@ -1,7 +1,6 @@
 package com.kodila.collections.adv.exercises.homework;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class FlightFinder {
@@ -13,10 +12,8 @@ public class FlightFinder {
         for (Flight flight: flightsTable) {
             if (flight.getDeparture().equals(departure)){
                 flightsFrom.add(flight);
-            }else{
-                flightsFrom = Collections.emptyList();
-                }
             }
+        }
         return flightsFrom;
     }
 
@@ -25,10 +22,8 @@ public class FlightFinder {
         List<Flight> flightsTo = new ArrayList<>();
 
         for (Flight flight: flightsTable) {
-            if (flight.getDeparture().equals(arrival)){
+            if (flight.getArrival().equals(arrival)){
                 flightsTo.add(flight);
-            }else{
-                flightsTo = Collections.emptyList();
             }
         }
         return flightsTo;
