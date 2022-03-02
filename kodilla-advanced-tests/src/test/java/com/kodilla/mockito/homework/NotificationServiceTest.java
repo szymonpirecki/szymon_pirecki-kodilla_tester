@@ -34,16 +34,13 @@ class NotificationServiceTest {
     @Test
     public void monitShouldBeSentToAllSubscribers() {
         notificationService.addUser(firstUser, "west");
-        notificationService.addUser(secondUser, "south");
-        notificationService.addUser(thirdUser, "east");
-        notificationService.addUser(fourthUser, "north");
+        notificationService.addUser(secondUser, "bieszczady");
 
         notificationService.sendMonitToAllSubscribers(monit);
 
         Mockito.verify(firstUser, Mockito.times(1)).receive(monit);
         Mockito.verify(secondUser, Mockito.times(1)).receive(monit);
-        Mockito.verify(thirdUser, Mockito.times(1)).receive(monit);
-        Mockito.verify(fourthUser, Mockito.times(1)).receive(monit);
+
     }
 
     @Test

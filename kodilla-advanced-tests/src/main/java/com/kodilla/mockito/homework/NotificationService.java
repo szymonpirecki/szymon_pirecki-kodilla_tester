@@ -4,49 +4,39 @@ import java.util.*;
 
 public class NotificationService {
 
-    private Set<User> north = new HashSet<>();
-    private Set<User> east = new HashSet<>();
-    private Set<User> south = new HashSet<>();
-    private Set<User> west = new HashSet<>();
-    private Set<User> all = new HashSet<>();
+
     private Map<String, Set<User>> users = new HashMap<>();
 
+
     public void addUser(User user, String region) {
-        switch (region) {
-            case "north":
-                north.add(user);
-                users.put("N", north);
-            case "east":
-                east.add(user);
-                users.put("E", east);
-            case "south":
-                south.add(user);
-                users.put("S", south);
-            case "west":
-                west.add(user);
-                users.put("W", west);
+
+        if (users.containsKey(region)) {
+            users.get(region).add(user);
+        } else {
+            Set<User> subscribers = new HashSet<>();
+            subscribers.add(user);
+            users.put(region, subscribers);
         }
-        all.add(user);
-        users.put("A", all);
+
+        if (users.containsKey("allUsers")) {
+            users.get("allUsers").add(user);
+        } else {
+            Set<User> allUsers = new HashSet<>();
+            allUsers.add(user);
+            users.put("allUsers", allUsers);
+        }
+
     }
 
+
     public void sendMonitToAllSubscribers(Monit monit) {
-        for (User user : users.getOrDefault("A", Collections.emptySet())) {
+        for (User user : users.getOrDefault("allUsers", Collections.emptySet())) {
             user.receive(monit);
         }
     }
 
     public void removeUserFrom(User user, String region) {
-        switch (region) {
-            case "north":
-                users.get("N").remove(user);
-            case "east":
-                users.get("E").remove(user);
-            case "south":
-                users.get("S").remove(user);
-            case "west":
-                users.get("W").remove(user);
-        }
+        users.get(region).remove(user);
     }
 
     public void archiveUser(User user) {
@@ -59,25 +49,8 @@ public class NotificationService {
 
 
     public void notifyUserFrom(Monit monit, String region) {
-        Set<User> notified = new HashSet<>();
-        switch (region) {
-            case "north":
-                notified = users.get("N");
-                break;
-            case "east":
-                notified = users.get("E");
-                break;
-            case "south":
-                notified = users.get("S");
-                break;
-            case "west":
-                notified = users.get("W");
-                break;
-        }
-        if (!notified.isEmpty()) {
-            for (User user : notified) {
-                user.receive(monit);
-            }
+        for (User user : users.getOrDefault(region, Collections.emptySet())) {
+            user.receive(monit);
         }
     }
 }
