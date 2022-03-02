@@ -1,6 +1,7 @@
 package com.kodilla.mockito.homework;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class NotificationService {
 
@@ -18,25 +19,22 @@ public class NotificationService {
             users.put(region, subscribers);
         }
 
-        if (users.containsKey("allUsers")) {
-            users.get("allUsers").add(user);
-        } else {
-            Set<User> allUsers = new HashSet<>();
-            allUsers.add(user);
-            users.put("allUsers", allUsers);
-        }
-
     }
 
 
     public void sendMonitToAllSubscribers(Monit monit) {
-        for (User user : users.getOrDefault("allUsers", Collections.emptySet())) {
+        Set<User> allUsers = new HashSet<>();
+        allUsers = users.values().stream().flatMap(Set::stream).collect(Collectors.toSet());
+        for (User user : allUsers) {
             user.receive(monit);
         }
     }
 
+
     public void removeUserFrom(User user, String region) {
-        users.get(region).remove(user);
+        if (users.containsKey(region)) {
+            users.get(region).remove(user);
+        }
     }
 
     public void archiveUser(User user) {
