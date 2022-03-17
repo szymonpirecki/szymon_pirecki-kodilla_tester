@@ -31,36 +31,20 @@ public class EBayTestingApp {
         searchField.submit();
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.cssSelector("li[class*='s-item']"), 0));
 
-        List<WebElement> items = new ArrayList<>();
-        items = driver.findElements(By.cssSelector("li[class*='s-item']"));
+        List<WebElement> items = driver.findElements(By.cssSelector("li[class*='s-item']"));
         List<String> texts = new ArrayList<>();
-        for(WebElement item : items){
+        for (WebElement item : items) {
             texts.add(item.getText());
         }
+        int counter = 0;
 
         for (String item : texts) {
+            counter++;
+            System.out.println(counter);
             System.out.println("------");
             System.out.println(item);
             System.out.println("------");
         }
-
-
-
-//        int i = 0;
-//        while(i<=items.size()){
-//            List<String> links = new ArrayList<>();
-//            links.add(items.get(i).getText());
-//            i++;
-//            System.out.println(i);
-//
-//        }
-
-
-
-
-
-
-
-
+        driver.quit();
     }
 }
