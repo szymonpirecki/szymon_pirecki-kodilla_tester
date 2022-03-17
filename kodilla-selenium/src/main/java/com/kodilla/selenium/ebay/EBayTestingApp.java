@@ -17,14 +17,12 @@ public class EBayTestingApp {
         System.setProperty("webdriver.chrome.driver", "/Users/kodilla/Documents/Development/Kodilla/chromedriver");
         WebDriver driver = new ChromeDriver();
 
-
         driver.get("https://www.ebay.com/");
         WebDriverWait wait = new WebDriverWait(driver, 5);
 
         WebElement categoryCombo = driver.findElement(By.cssSelector("#gh-cat"));
         Select category = new Select(categoryCombo);
         category.selectByVisibleText("Cameras & Photo");
-
 
         WebElement searchField = driver.findElement(By.cssSelector("#gh-ac"));
         searchField.sendKeys("Mavic Mini");
